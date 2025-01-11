@@ -4,7 +4,7 @@ import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import MyWork from './components/MyWork/MyWork';
 import Contact from './components/Contact/Contact';
-import Portfolio from './components/Portfolio/Portfolio';  // Import Portfolio component
+
 
 const App = () => {
   return (
@@ -13,7 +13,6 @@ const App = () => {
       <Hero />
       <About />
       <MyWork />
-      <Portfolio />  {/* Add the Portfolio component here */}
       <Contact />
     </div>
   );
