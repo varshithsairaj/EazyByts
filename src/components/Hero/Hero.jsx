@@ -19,7 +19,7 @@ const Hero = () => {
         </div>
         <div className="hero-resume">
           <a
-            href="/resume1.pdf" // Reference the file directly from the public folder
+            href="/varshith_resume_internship (3).pdf" // Reference the file directly from the public folder
             style={{  display: "block",        // Ensures the link behaves like a block element
               textAlign: "center",     // Centers the text
               textDecoration: "none",  // Removes underline
