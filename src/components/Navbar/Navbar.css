@@ -13,7 +13,7 @@
     font-size: 19px;
 }
 .navbar-logo {
-    width: 180px;
+    width: 150px;
     height: auto;
     margin-right: 10px; /* Space between logo and menu */
     cursor: pointer;
@@ -80,7 +80,8 @@
   /* Ensure the logo is aligned left on mobile */
   .navbar-logo {
     
-    width: 150px; /* Adjust width for mobile */
+    width: 120px; /* Adjust width for mobile */
+    margin-left:10px ;
    
   }
   
@@ -89,6 +90,7 @@
     position: absolute;
     
     right: 30px; /* Anchor to the right */
+    width: 30px;
   }
 
   .nav-mob-close{
@@ -96,7 +98,7 @@
     position: relative;
     top: 30px;
     left: 250px;
-    width:20px;
+    width:15px;
   
   }
   
