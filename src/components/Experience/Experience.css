@@ -146,12 +146,12 @@
 
 @media (max-width: 767px) { 
   .experience-section {
-    padding: 40px 15px;
+    padding: 80px 15px;
     font-size: 14px; /* Adjust font size if needed */
     margin-top: 230px; /* Reduce margin for smaller screens */
   }
   .title-container {
-    margin-bottom: 60px; /* Less space on smaller screens */
+    margin-bottom: 70px; /* Less space on smaller screens */
   }
 
   .main-title-text {
@@ -167,7 +167,7 @@
   
   align-items: center;
   display: inline-block;
-  font-size: 25px;
+  font-size: 30px;
   text-decoration: none;
   transition: transform 0.1s ease-in-out;
 }
