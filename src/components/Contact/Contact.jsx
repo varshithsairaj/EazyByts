@@ -37,6 +37,7 @@ const Contact = () => {
   return (
     <div>
       <div id='contact' className="contact">
+          <div className="contact-content-wrapper">
         <div className="contact-title">
             <h1>Get in touch</h1>
             <img src={theme_pattern} alt="" />
@@ -73,6 +74,8 @@ const Contact = () => {
 
             </form>
         </div>
+        </div>
+        
       </div>
     </div>
   )

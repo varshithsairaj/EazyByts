@@ -1,35 +1,31 @@
+// Hero.js
 import React from "react";
 import "./Hero.css";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+// import AnchorLink from "react-anchor-link-smooth-scroll"; // Commented out in your original
+import PurpleSectionAurora from '../Effect/PurpleSectionAurora';
 
 const Hero = () => {
   return (
     <div id="home" className="hero">
-      <h1>
-        <span>I'm Panchadarla Varshith Sai Raj</span>, Full Stack Developer based in India.
-      </h1>
-      <p>
-        A highly motivated and detail-oriented Full Stack Developer with expertise in building dynamic, responsive web applications from Visakhapatnam, Andhra Pradesh.
-      </p>
-      <div className="hero-action">
-        <div className="hero-connect">
-          <AnchorLink className="anchor-link" offset={50} href="#contact">
-            Connect with me
-          </AnchorLink>
-        </div>
-        <div className="hero-resume">
-          <a
-            href="/varshith_resume_internship (3).pdf" // Reference the file directly from the public folder
-            style={{  display: "block",        // Ensures the link behaves like a block element
-              textAlign: "center",     // Centers the text
-              textDecoration: "none",  // Removes underline
-              color: "inherit",        // Inherits text color from parent
-              width: "100%",           // Makes the link fill the container
-              height: "100%",          // Makes the link fill the container
-               }}
-          >
-            My Resume
-          </a>
+      <PurpleSectionAurora /> {/* Add the aurora effect as the first child */}
+
+      {/* Wrap content to ensure it's above the aurora */}
+      <div className="hero-content-wrapper">
+        <h1>
+          <span>I'm Panchadarla Varshith Sai Raj</span>, Full Stack AI Developer based in India.
+        </h1>
+        <p>
+          Full Stack AI Developer passionate about building intelligent, end-to-end applications that combine machine learning with seamless user experiences.
+        </p>
+        <div className="hero-action">
+          {/* <div className="hero-connect"> ... </div> */}
+          <div className="hero-resume">
+            <a
+              href="/resume.pdf"
+            >
+              My Resume
+            </a>
+          </div>
         </div>
       </div>
     </div>

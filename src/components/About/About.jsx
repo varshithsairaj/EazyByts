@@ -1,5 +1,7 @@
 import React from "react";
 import theme_pattern from '../../assets/theme_pattern.svg'
+import PurpleSectionAurora from '../Effect/PurpleSectionAurora';
+
 import {
   FaHtml5,
   FaCss3,
@@ -20,8 +22,12 @@ import {
   SiStreamlit,
   SiCplusplus,
   SiC,
-  SiExpress
+  SiExpress,
+  SiScikitlearn,
+  SiOpencv 
 } from "react-icons/si";
+import { BiLogoFlask } from "react-icons/bi";
+import {  RiNextjsLine } from "react-icons/ri";
 
 
 
@@ -32,6 +38,8 @@ import "./About.css"; // Ensure you link your CSS file
 const About = () => {
     return (
         <div id='skills' className="experience-container">
+           <PurpleSectionAurora /> {/* Add the purple aurora effect here */}
+           <div className="skills-content-wrapper"> {/* Wrapper for content */}
           <div className="about-title">
           <h1>Technical Skills</h1>
           <img src={theme_pattern} alt="" />
@@ -61,7 +69,7 @@ const About = () => {
           <p>Figma</p>
         </div>
         <div className="icon-box">
-          <FaGithubAlt size={50} color="#000" />
+          <FaGithubAlt size={50} color="#FFFFFF" />
           <p>GitHub</p>
         </div>
         <div className="icon-box">
@@ -69,7 +77,7 @@ const About = () => {
           <p>Node.js</p>
         </div>
         <div className="icon-box">
-          <SiExpress color="#000000" size={50} />
+          <SiExpress color="#F2F0EF" size={50} />
           <p>Express.js</p>
         </div>
         <div className="icon-box">
@@ -77,11 +85,11 @@ const About = () => {
           <p>Redux</p>
         </div>
         <div className="icon-box">
-          <SiDjango size={50} color="#092E20" />
-          <p>Django</p>
+          < RiNextjsLine size={50} color="#000" />
+          <p>Nextjs</p>
         </div>
         <div className="icon-box">
-          <SiFlask size={50} color="#000" />
+          < BiLogoFlask size={50} color="#FFFFFF" />
           <p>Flask</p>
         </div>
         <div className="icon-box">
@@ -112,6 +120,15 @@ const About = () => {
           <FaPython size={50} color="#3776AB" />
           <p>Python</p>
         </div>
+        <div className="icon-box">
+          < SiScikitlearn  size={50} color="#FDAA48" />
+          <p>Scikit learn</p>
+        </div>
+        <div className="icon-box">
+          < SiOpencv  size={50} color="#3944bc" />
+          <p>Computer Vision</p>
+        </div>
+         </div>
       </div>
     </div>
   );

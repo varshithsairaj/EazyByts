@@ -1,16 +1,41 @@
+/* About.css */
+
 .experience-container {
+  /* --- Styles for containing the PurpleSectionAurora --- */
+  position: relative;   /* Establishes a positioning context for PurpleSectionAurora */
+  overflow: hidden;     /* Clips the aurora's blur at the edges of this section */
+  background-color:transparent ; /* Dark purple base for this section, blends with purple aurora */
+  /* --- End Aurora Styles --- */
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 80px;
-  margin: 80px 170px;
-  }
-  
-.about-title{
-    position: relative;
-  
+  justify-content: flex-start; /* Align content to the top */
+  gap: 50px; /* Adjusted gap */
+  margin-top: -40px ; /* Remove side margins if you want it full-width between fixed navbar padding */
+  padding: 0; /* General padding */
+  padding-top: 100px; /* IMPORTANT: Adjust this based on your fixed Navbar's height */
+  min-height: 100vh; /* Ensure section takes at least viewport height */
+  box-sizing: border-box;
+  width: 100%; /* Make it span the full width available */
+   
+}
 
+/* This wrapper should be in your About.js JSX, around .about-title and .icon-grid */
+.skills-content-wrapper {
+  position: relative; /* To layer above the section's aurora */
+  z-index: 1;         /* Ensures content is on top */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px; /* Matches the gap in .experience-container or adjust as needed */
+  width: 100%;
+  max-width: 1000px; /* Max width for the content area */
+}
+
+.about-title {
+  position: relative; /* Stays relative for its child image positioning */
+  text-align: center; /* Center the title text */
 }
 
 .about-title h1{
@@ -18,6 +43,7 @@
     padding: 0px 30px;
     font-size: 70px;
     font-weight: 500;
+    
 }
 
 .about-title img{
@@ -27,94 +53,102 @@
   z-index: -1;      /* Ensure the image is behind other content */
       
 }
-  .container {
-    max-width: 1200px; /* Adjust based on your design */
-    margin: 0 auto;
-    padding: 20px;
-    
-  }
-
- 
-  
-  .icon-grid {
+ .icon-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
   gap: 20px; /* Space between grid items */
   width: 100%; /* Full width */
-  max-width: 800px; /* Optional: set a maximum width */
+  max-width: 700px; /* Optional: set a maximum width */
   margin: 0 auto; /* Center the grid */
   padding: 20px;
   box-sizing: border-box;
 }
-  
-  
+
 .icon-box {
-    text-align: center;
-    padding: 10px;
-    border: 2px solid #fff;
-    cursor: pointer;
-    border-radius: 8px; /* Optional: rounded corners */
-    background-color:#161513; /* Optional: background color */
-    
-  }
-  
-  .icon-box:hover {
-   
-    border-color: #b415ff;
-    transition: 0.2s;
-  }
-  
-  .icon-box p {
-    margin-top: 10px;
-    font-size: 0.9rem;
-    color: #555;
+  text-align: center;
+  padding: 10px; /* Slightly more padding */
+  border: 1px solid rgba(180, 120, 255, 0.3); /* Subtle purple border */
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: rgba(22, 21, 19, 0.5); /* Dark, semi-transparent background */
+  backdrop-filter: blur(3px); /* Optional: subtle glass effect over aurora */
+  transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px; /* Give a consistent minimum height */
+}
+
+.icon-box:hover {
+  border-color: #c5a6ff; /* Brighter purple border on hover */
+  background-color: rgba(30, 25, 40, 0.6);
+  transform: translateY(-5px);
+}
+
+.icon-box svg { /* Add some margin below SVG */
+  margin-bottom: 10px;
+}
+
+.icon-box p {
+  margin-top: 5px; /* Reduced margin-top */
+  font-size: 0.9rem;
+  color: #d1c0e0; /* Light text color for readability on dark background */
+}
+
+/* --- Responsive Adjustments --- */
+@media(max-width:768px) {
+ .experience-container {
+  flex-direction: column;
+  gap: 30px;
+  margin: -180px 5px; /* Increased negative top margin to move it upward */
+}
+
+
+  .skills-content-wrapper {
+    gap: 40px;
   }
 
-  @media(max-width:768px) {
-    .experience-container { 
-      flex-direction: column;
-      gap: 30px; /* Smaller gap for compact layout */
-      margin: 20px 15px; /* Reduce margins for better fit */
-    }
-  
-    .about-title h1 {
-      font-size: 35px; /* Smaller font for titles */
-      padding: 0px 10px; /* Compact padding */
-    }
-  
-    .about-title img {
-      width: 40%; /* Reduce image size */
-      bottom: -5px; /* Adjust position */
-      right: -5px;
-    }
-  
-    .container {
-      max-width: 100%; /* Full width on small screens */
-      padding: 10px;
-    }
-  
-    .icon-grid {
-      grid-template-columns: repeat(4, 1fr); /* 3 columns for fewer rows */
+  .about-title h1 {
+    font-size: 35px;
+  }
+
+  .about-title img {
+   width: 40%; /* Reduce image size */
+      bottom: -4px; /* Adjust positioning */
+      right: 20px;
+  }
+  .about-title {
+    margin-top: 150px; /* Adjust base or here if needed */
+    margin-bottom: 5px;
+    /* padding-bottom: 5px; */
+  }
+
+  .icon-grid {
+    grid-template-columns: repeat(4, 1fr); /* 3 columns for fewer rows */
       gap: 10px; /* Compact spacing */
       max-width: 100%; /* Full width for responsiveness */
       margin: 0 auto;
-    }
-  
-    .icon-box {
-      padding: 5px; /* Reduce padding */
+  }
+
+  .icon-box {
+    padding: 5px; /* Reduce padding */
       border-radius: 5px; /* Slightly smaller radius */
       font-size: 0.8rem; /* Smaller text */
-      background-color: #161513;
-      border: 1px solid #fff; /* Thin border for aesthetics */
-    }
-  
-    .icon-box:hover {
-      border-color: #b415ff;
-      transition: 0.2s;
-    }
-  
-    .icon-box p {
-      font-size: 0.75rem; /* Further reduce text size */
-    }
   }
-  
+
+  .icon-box p {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+/* Unused .container class from your original CSS - remove if not needed */
+/*
+.container {
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 20px;
+}
+*/

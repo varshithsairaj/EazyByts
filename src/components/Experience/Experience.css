@@ -1,0 +1,212 @@
+/* src/components/Experience.css */
+.experience-section {
+  background-color: #100518; /* Dark background */
+  color: #e0e0e0;          /* Light text color */
+  padding: 80px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Or your preferred font */
+  min-height: 100vh; /* For demonstration, to see it clearly */
+   margin-top: 100px;
+  
+}
+
+.title-container {
+  position: relative;
+  text-align: center;
+  margin-bottom: 50px; /* Space between title and list */
+}
+
+.background-title-text {
+  font-size: clamp(4rem, 15vw, 10rem); /* Responsive font size */
+  font-weight: bold;
+  color: #2a2a2a; /* Darker grey for the outline effect */
+  opacity: 0.5; /* Make it faded */
+  text-transform: uppercase;
+  letter-spacing: 2px; /* Adjust as needed */
+  line-height: 1;
+  margin: 0;
+  user-select: none; /* Prevent text selection */
+}
+
+.main-title-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-title-text {
+  font-size: clamp(2rem, 5vw, 3rem); /* Slightly adjusted size for effect */
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  padding-bottom: 10px; /* Space for the line */
+  position: relative;
+
+  /* Gradient Text */
+  background: linear-gradient(90deg, #4f8ff7, #a96cff, #4f8ff7); /* Blue to Purple to Blue */
+  background-size: 200% auto; /* Important for animation */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent to show gradient */
+  
+  animation: textGradientShine 5s linear infinite; /* Apply animation */
+  letter-spacing: 1px;
+}
+
+@keyframes textGradientShine {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: -200% center; /* Moves gradient to the left */
+  }
+}
+
+/* Underline style - can be kept or modified */
+.main-title-text::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 120px;
+  height: 2px; /* Thinner line */
+  background-color: #7a7eff; /* A color from the gradient or complementary */
+  border-radius: 1px;
+}
+
+.experience-list {
+  max-width: 700px;
+  margin: 0 auto; /* Center the list */
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Space between experience items */
+}
+
+
+
+.experience-company {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+  display: flex; /* To align icon and text */
+  align-items: center; /* Vertically align icon and text */
+}
+
+.experience-company a {
+  color: #ffffff;
+  text-decoration: none;
+  
+  align-items: center;
+  display: inline-block;
+  
+  text-decoration: none;
+  transition: transform 0.1s ease-in-out;
+}
+.experience-company a:hover {
+  transform: scale(1.15); /* sudden scale up */
+  
+ 
+}
+
+.organization-text {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #b0b0b0;
+  margin-left: 8px;
+}
+
+.icon-link {
+  font-size: 0.8em; /* Relative to company name size */
+  margin-left: 10px;
+  color: #b0b0b0; /* Icon color */
+  transition: color 0.3s ease;
+}
+
+.experience-company a:hover .icon-link {
+  color: rgba(255, 255, 255, 0.755); /* Icon color on hover */
+}
+
+
+.experience-role {
+  font-size: 1.1rem;
+  color: #c0c0c0;
+  margin-bottom: 6px;
+}
+
+.experience-dates {
+  font-size: 0.9rem;
+  color: #888888;
+}
+
+@media (max-width: 767px) { 
+  .experience-section {
+    padding: 40px 15px;
+    font-size: 14px; /* Adjust font size if needed */
+    margin-top: 230px; /* Reduce margin for smaller screens */
+  }
+  .title-container {
+    margin-bottom: 60px; /* Less space on smaller screens */
+  }
+
+  .main-title-text {
+    font-size: clamp(1.5rem, 8vw, 2.5rem); /* Smaller size for mobile */
+  }
+
+  .experience-list {
+    gap: 20px; /* Less space between items */
+  }
+  .experience-company a {
+  color: #ffffff;
+  text-decoration: none;
+  
+  align-items: center;
+  display: inline-block;
+  font-size: 25px;
+  text-decoration: none;
+  transition: transform 0.1s ease-in-out;
+}
+.experience-company a:hover {
+  transform: scale(1.15); /* sudden scale up */
+  
+ 
+}
+
+.organization-text {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: #b0b0b0;
+  margin-left: 8px;
+}
+
+.icon-link {
+  font-size: 0.8em; /* Relative to company name size */
+  margin-left: 10px;
+  color: #b0b0b0; /* Icon color */
+  transition: color 0.3s ease;
+}
+
+.experience-company a:hover .icon-link {
+  color: rgba(255, 255, 255, 0.755); /* Icon color on hover */
+}
+
+
+.experience-role {
+  font-size: 1.1rem;
+  color: #c0c0c0;
+  margin-bottom: 6px;
+}
+
+.experience-dates {
+  font-size: 0.9rem;
+  color: #888888;
+}
+
+
+  
+}

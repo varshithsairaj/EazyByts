@@ -1,30 +1,62 @@
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 100px;
-    
+/* Navbar.css */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 50px; /* Your existing padding */
+  /* margin: 20px 170px; Remove or adjust margin if it was for centering a non-full-width navbar */
+  /* background: #1F1F1F;  OLD background */
+   background: rgba(15, 10, 30, 0.15); /* VERY subtle dark purple, mostly transparent */
+  /* OR for fully transparent: background: transparent; */
+   backdrop-filter: blur(4px); /* Optional: subtle glassmorphism */
+  /* box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1); OLD shadow */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional: subtle separator */
+  position: fixed; /* Or sticky, if you want it to stay at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Ensure navbar is above other content, but aurora is at -1 */
+  box-sizing: border-box; /* Important if you have padding and fixed width */
 }
-.nav-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 60px;
-    font-size: 19px;
-}
-.navbar-logo {
-    width: 150px;
-    height: auto;
-    margin-right: 10px; /* Space between logo and menu */
-    cursor: pointer;
-  
-    transition: 0.5s;
-  }
-  
-.navbar-logo:hover{
 
- transform: scale(1.05);
-  }
+.navbar-logo {
+  width: 120px; /* Adjust as needed */
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 40px; /* Your existing gap */
+  font-size: 18px; /* Your existing font-size */
+}
+
+.nav-menu li{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.nav-menu li p {
+  margin: 0;
+  color: #e0e0e0; /* Ensure text color is light and readable */
+  transition: color 0.3s;
+}
+
+.nav-menu li:hover p,
+.nav-menu li.active p { /* Add an active class if needed */
+  color: #c5a6ff; /* Highlight color */
+}
+
+.underline{
+  display: flex;
+  margin: auto;
+  width:50px;
+  height: auto;
+}
+
+
 .nav-connect{
     padding: 20px 30px;
     border-radius: 50px;
@@ -39,25 +71,13 @@
   transform: scale(1.05);
 }  
 
-.underline{
-  display: flex;
-  margin: auto;
-  width:50px;
-  height: auto;
-}
-
-.nav-menu li{
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.anchor-link{
+.anchor-link {
   text-decoration: none;
-  color: white;
+  color: inherit; /* Inherit color from parent li p */
 }
 
+
+/* Responsive menu styles - ensure they also have appropriate backgrounds */
 .nav-mob-close{
   display: none;
 
@@ -67,63 +87,73 @@
   display: none;
 }
 
-@media(max-width:768px) {
+/* Responsive Rules */
+@media (max-width: 768px) {
   .navbar {
-    margin: 20px 10px;
-    justify-content: flex-start; /* Align items to the left */
+    margin:0px 18px;
+    justify-content: space-between;
+     
   }
 
   .nav-connect {
     display: none;
   }
 
-  /* Ensure the logo is aligned left on mobile */
   .navbar-logo {
     
-    width: 120px; /* Adjust width for mobile */
-    margin-left:10px ;
+    width: 110px; /* Adjust width for mobile */
+    margin-left:-70px ;
    
   }
   
+
   .nav-mob-open {
     display: block;
     position: absolute;
     
-    right: 30px; /* Anchor to the right */
+    right: 40px; /* Anchor to the right */
     width: 30px;
+  }
+
+  .nav-menu {
+   
+   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: fixed;
+  top: 0;
+  right: -350px; /* shows the nav bar */
+  width: 280px;
+  height: 100vh;
+  background-color: #1f0016;
+  padding: 20px 20px;
+  gap: 30px;
+  transition: right 0.5s;
+  z-index: 150;
+    
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+   .nav-menu li{
+    font-size: 20px;
+    padding-left: 80px;
+    flex-direction: row ;
+    
+    gap: 20px;
   }
 
   .nav-mob-close{
     display: block;
     position: relative;
     top: 30px;
-    left: 250px;
+    left: 200px;
     width:15px;
   
   }
-  
-  .nav-menu{
-    position:fixed;
-    flex-direction: column;
-    align-items: start;
-    top: 0;
-    gap: 30px;
-    background-color:#1f0016;
-    opacity: 1;
-    width: 300px;
-    height: 100%;
-    z-index: 2;
-    transition: right  0.5s;
-    right : -350px;  /** hides the nav bar**/
-  
-  }
-  
-  .nav-menu li{
-    font-size: 20px;
-    padding-left: 100px;
-    flex-direction: row;
-    gap: 20px;
-  }
+
   
 }
-
