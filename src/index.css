@@ -1,18 +1,57 @@
-*{
+/* App.css */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box; /* Often a good default */
 }
+
 body {
   margin: 0;
-  font-family: outfit;
+  font-family: 'Outfit', sans-serif; /* Add sans-serif as a fallback */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #04010a;/* Very dark purple/black base */
+  background-color: #04010a; /* Very dark purple/black base */
   color: #e0e0e0; /* Default light text color for readability */
-  overflow-x: hidden; /* Prevent horizontal scroll if any element slightly overflows */
+  /* overflow-x: hidden; */ /* Consider if you want to prevent horizontal scroll globally */
 }
+
+/*
+  It's generally redundant to set margin and padding on html AND body separately
+  if you've already reset them with '*' or on body.
+  The body rule above covers margin: 0;
+  padding: 0 on html is usually not needed unless you have specific reasons.
+*/
+/*
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
+*/
+
+
+/* --- ADD YOUR AURORA KEYFRAMES HERE --- */
+@keyframes animateDeepPurple1 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  50% { transform: translate(50px, -70px) scale(1.15); opacity: 0.7; }
+  100% { transform: translate(-25px, 35px) scale(0.9); opacity: 0.4; }
+}
+
+@keyframes animateDeepPurple2 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.4; }
+  50% { transform: translate(-60px, 45px) scale(1.2); opacity: 0.65; }
+  100% { transform: translate(30px, -20px) scale(0.85); opacity: 0.35; }
+}
+
+@keyframes animateDeepPurple3 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+  50% { transform: translate(70px, 20px) scale(1.1); opacity: 0.75; }
+  100% { transform: translate(-35px, -40px) scale(0.9); opacity: 0.5; }
+}
+
+@keyframes animateDeepPurple4 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0.3; }
+  33% { transform: translate(20px, -35px) scale(1.05) rotate(8deg); opacity: 0.55; }
+  66% { transform: translate(-40px, 25px) scale(0.95) rotate(-6deg); opacity: 0.6; }
+  100% { transform: translate(10px, 10px) scale(1) rotate(2deg); opacity: 0.35; }
+}
+/* --- END OF AURORA KEYFRAMES --- */
