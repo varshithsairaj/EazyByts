@@ -142,7 +142,7 @@ const ProjectCarousel = ({ projects }) => {
   const [isHovering, setIsHovering] = useState(false);
 
   const duplicatedProjects = [...projects, ...projects];
-  const scrollSpeed = 1.35; // Adjust for speed, or make it a prop
+  const scrollSpeed = 1.5; // Adjust for speed, or make it a prop
 
   useEffect(() => {
     const carousel = carouselRef.current;

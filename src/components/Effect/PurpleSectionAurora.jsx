@@ -77,7 +77,7 @@ const PurpleSectionAurora = () => {
               height: blob.height,
               background: `radial-gradient(circle, ${blob.bgColor} 0%, transparent 60%)`,
               borderRadius: '50%',
-              filter: 'blur(45px)', // Adjust this value based on testing!
+              filter: 'blur(25px)', // Adjust this value based on testing!
               opacity: 0.8,
               animationName: blob.animationName, // Correctly refers to global keyframes
               animationDuration: blob.animationDuration,
