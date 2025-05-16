@@ -137,57 +137,65 @@ const ProjectCard = ({ project }) => {
 // --- Carousel Component ---
 const ProjectCarousel = ({ projects }) => {
   const carouselRef = useRef(null);
-  const scrollAmountRef = useRef(0); // To store current scroll position
-  const animationFrameIdRef = useRef(null); // To store the requestAnimationFrame ID
+  const scrollAmountRef = useRef(0);
+  const animationFrameIdRef = useRef(null);
   const [isHovering, setIsHovering] = useState(false);
 
   const duplicatedProjects = [...projects, ...projects];
-  const scrollSpeed = 1.5; // Adjust for speed, or make it a prop
+
+  // Define base speed and a factor for mobile, or specific mobile speed
+  const baseScrollSpeed = 1.5; // Speed for desktop
+  const mobileScrollSpeedMultiplier = 1.33; // Make it 33% faster on mobile, adjust as needed
+                                          // OR: const mobileScrollSpeed = 2.0; // Fixed speed for mobile
 
   useEffect(() => {
     const carousel = carouselRef.current;
     if (!carousel) return;
 
     const animateScroll = () => {
-      if (!isHovering && carouselRef.current) { // Check if carousel still exists
-        scrollAmountRef.current += scrollSpeed;
-        // Check against scrollWidth of the actual carousel element
+      if (!isHovering && carouselRef.current) {
+        let currentSpeed = baseScrollSpeed;
+        // Check if we're likely on a mobile device (adjust breakpoint as needed)
+        if (typeof window !== "undefined" && window.innerWidth < 768) {
+          currentSpeed = baseScrollSpeed * mobileScrollSpeedMultiplier;
+          // OR: currentSpeed = mobileScrollSpeed;
+        }
+
+        scrollAmountRef.current += currentSpeed;
         if (scrollAmountRef.current >= carouselRef.current.scrollWidth / 2) {
-          scrollAmountRef.current = 0; // Reset to loop
+          scrollAmountRef.current = 0;
         }
         carouselRef.current.style.transform = `translateX(-${scrollAmountRef.current}px)`;
       }
       animationFrameIdRef.current = requestAnimationFrame(animateScroll);
     };
 
-    // Clear any existing animation frame before starting a new one
-    // This is important if isHovering changes rapidly or projects.length changes
     if (animationFrameIdRef.current) {
       cancelAnimationFrame(animationFrameIdRef.current);
     }
-    
-    // Start the animation
-    // Initialize scrollAmountRef.current from existing style if needed (e.g., on remount or complex state changes)
-    // For simplicity here, we assume it starts or continues from its last value.
-    // If the carousel.style.transform was cleared or reset elsewhere, you might need to re-parse it.
-    
     animationFrameIdRef.current = requestAnimationFrame(animateScroll);
 
-    // Cleanup function
     return () => {
       if (animationFrameIdRef.current) {
         cancelAnimationFrame(animationFrameIdRef.current);
       }
     };
-  }, [isHovering, projects.length, scrollSpeed]); // Add scrollSpeed if it can change, or remove if constant
+    // Add dependencies that, if changed, should restart the effect.
+    // If baseScrollSpeed and mobileScrollSpeedMultiplier are props or state, add them.
+    // Since they are constants within this component scope, [isHovering, projects.length] is okay.
+  }, [isHovering, projects.length]); // Add baseScrollSpeed, mobileScrollSpeedMultiplier if they can change
 
   return (
     <div
-      id= "projects" className="carousel-container"
+      id="projects"
+      className="carousel-container"
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
+      // Add touch events for better mobile interaction
+      onTouchStart={() => setIsHovering(true)}
+      onTouchEnd={() => setIsHovering(false)}
     >
-      <div className="carousel-track" ref={carouselRef} style={{ transform: `translateX(-${scrollAmountRef.current}px)`}}> {/* Initialize transform here if needed */}
+      <div className="carousel-track" ref={carouselRef} style={{ transform: `translateX(-${scrollAmountRef.current}px)` }}>
         {duplicatedProjects.map((project, index) => (
           <ProjectCard key={`${project.id}-${index}`} project={project} />
         ))}
