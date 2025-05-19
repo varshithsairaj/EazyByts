@@ -4,7 +4,9 @@
   padding: 0;
   box-sizing: border-box; /* Often a good default */
 }
-
+html {
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
 body {
   margin: 0;
   font-family: 'Outfit', sans-serif; /* Add sans-serif as a fallback */
@@ -14,19 +16,6 @@ body {
   color: #e0e0e0; /* Default light text color for readability */
   /* overflow-x: hidden; */ /* Consider if you want to prevent horizontal scroll globally */
 }
-
-/*
-  It's generally redundant to set margin and padding on html AND body separately
-  if you've already reset them with '*' or on body.
-  The body rule above covers margin: 0;
-  padding: 0 on html is usually not needed unless you have specific reasons.
-*/
-/*
-html, body {
-  margin: 0;
-  padding: 0;
-}
-*/
 
 
 /* --- ADD YOUR AURORA KEYFRAMES HERE --- */

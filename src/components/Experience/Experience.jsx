@@ -20,7 +20,7 @@ const experienceData = [
   },
   {
     id: 3,
-    company: "Externsclub",
+    company: "EazyByts",
     role: "Full-Stack Developer Intern",
     dates: "Jan 2025 - Feb 2024",
     link: "https://eazybyts.com/"
