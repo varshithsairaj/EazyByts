@@ -5,21 +5,27 @@ import './Experience.css'; // We'll still keep the CSS separate for clarity
 const experienceData = [
   {
     id: 1,
+    company: "Thinkvate Solutions",
+    role: "Project Intern",
+    dates: "June 2025 - present",
+    link: "https://www.linkedin.com/company/thinkvate-solutions-private-limited/posts/?feedView=all"
+  },
+  {
+    id: 2,
     company: "Externsclub",
     role: "Full-Stack Developer Intern",
     dates: "June 2024 - Aug 2024",
     link: "http://www.externsclub.com/"
   },
   {
-    id: 2,
+    id: 3,
     company: "Center of Autonomous Systems",
-    // organization: "Google Developer Groups",
-    role: "Technical Team Lead",
-    dates: "July 2024 - Dec 2024",
+    role: "Technical Team Member",
+    dates: "Aug 2023 - Feb 2025",
     link: "https://www.gitam.edu/research/centre-of-excellence/centre-for-autonomous-system#:~:text=The%20Centre%20for%20Autonomous%20Systems,enhancing%2C%20and%20analysing%20autonomous%20systems."
   },
   {
-    id: 3,
+    id: 4,
     company: "EazyByts",
     role: "Full-Stack Developer Intern",
     dates: "Jan 2025 - Feb 2024",
@@ -27,10 +33,10 @@ const experienceData = [
   },
 
   {
-    id: 4,
+    id: 5,
     company: "Novitech",
     role: "AIML Intern",
-    dates: "Nov 2024 - Jan 2025",
+    dates: "Dec 2024 - Jan 2025",
     link: "https://novitechrd.com/"
   }
 ];

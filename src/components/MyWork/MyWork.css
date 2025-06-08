@@ -307,14 +307,7 @@ body {
   position: relative;
   z-index: 1;
   border: 2px solid rgba(255, 255, 255, 0.849);
-
-
-    
-    
-
-
-    
-  }
+}
 
   .project-content { padding: 15px; }
   .project-title { font-size: 1.2rem; }
@@ -329,5 +322,10 @@ body {
     mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   }
   .carousel-footer-text { font-size: 0.8rem; }
+
+  
+
+  
+
 }
 
